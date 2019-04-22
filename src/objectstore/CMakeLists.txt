@@ -45,7 +45,7 @@ add_dependencies(dpods_perf dpods)
 
 # objectstore performance tester (fixed number of objects)
 add_executable(dpods_perf_fixnumobj perf_fixnumobj.cpp)
-target_include_directories(dpods_perf PRIVATE
+target_include_directories(dpods_perf_fixnumobj PRIVATE
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_DIR}>
 )
