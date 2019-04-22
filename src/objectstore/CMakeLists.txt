@@ -43,6 +43,15 @@ target_include_directories(dpods_perf PRIVATE
 target_link_libraries(dpods_perf dpods)
 add_dependencies(dpods_perf dpods)
 
+# objectstore performance tester (fixed number of objects)
+add_executable(dpods_perf_fixnumobj perf_fixnumobj.cpp)
+target_include_directories(dpods_perf PRIVATE
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_DIR}>
+)
+target_link_libraries(dpods_perf_fixnumobj dpods)
+add_dependencies(dpods_perf_fixnumobj dpods)
+
 # make install
 install(TARGETS dpods EXPORT dpods
         LIBRARY DESTINATION lib)
