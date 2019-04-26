@@ -72,7 +72,7 @@ public:
     }
 
     // Tracks down the appropriate row
-    volatile T& operator[](const int row_idx) const { return ((T&)base[row_idx * rowLen]); }
+    volatile T& operator[](const int row_idx) const { return ((T&)base[((uint64_t)row_idx) * rowLen]); }
 
     // Getter
     volatile T const& operator()(const int row_idx) const {
