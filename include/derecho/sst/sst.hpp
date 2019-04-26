@@ -104,7 +104,7 @@ public:
     }
 
     // Tracks down the appropriate row
-    volatile T* operator[](const int& idx) const { return (T*)(base + idx * rowLen); }
+    volatile T* operator[](const int& idx) const { return (T*)(base + ((uint64_t)idx) * rowLen); }
 
     /** Just like std::vector::size(), returns the number of elements in this vector. */
     size_t size() const { return length; }
